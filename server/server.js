@@ -43,6 +43,7 @@ To see demo, run in a new session:
   - \`npm run valid-client\`
   - \`npm run invalid-client\`
   - \`npm run tls-connect\`
+  - \`npm run tls-connect-no-ca\`
 `
 	console.log(msg)
 });

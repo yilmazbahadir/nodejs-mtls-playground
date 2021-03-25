@@ -9,7 +9,8 @@
     "server": "node ./server/server.js",
     "valid-client": "node ./client/valid-client.js",
     "invalid-client": "node ./client/invalid-client.js",
-    "tls-connect": "node ./client/tls-connect.js"
+    "tls-connect": "node ./client/tls-connect.js",
+    "tls-connect-no-ca": "node ./client/tls-connect-no-ca.js"
   },
   "dependencies": {
     "express": "^4.16.3",
