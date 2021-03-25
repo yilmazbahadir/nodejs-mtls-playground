@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-mtls-playground",
+  "version": "0.0.1",
+  "author": "Baha",
+  "description": "Demo authentication via client certificates",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "server": "node ./server/server.js",
+    "valid-client": "node ./client/valid-client.js",
+    "invalid-client": "node ./client/invalid-client.js",
+    "tls-connect": "node ./client/tls-connect.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "node-fetch": "^2.6.1"
+  }
+}
