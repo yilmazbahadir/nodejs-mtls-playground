@@ -4,12 +4,12 @@ const https = require('https');
 const path = require('path');
 
 const opts = {
-	key: fs.readFileSync(path.join(__dirname, 'certs/node.key.pem')),
-	cert: fs.readFileSync(path.join(__dirname, 'certs/node.full.crt.pem')),
+	key: fs.readFileSync(path.join(__dirname, 'certs2/agent1-communication.key.pem')),
+	cert: fs.readFileSync(path.join(__dirname, 'certs2/agent1.full2.crt.pem')),
 	requestCert: true,
 	rejectUnauthorized: false,
 	ca: [
-		fs.readFileSync(path.join(__dirname, 'certs/controller-ca-cert.pem'))
+		fs.readFileSync(path.join(__dirname, 'certs2/controller-ca.crt.pem'))
 	]
 };
 
