@@ -5,14 +5,12 @@ const tls = require('tls');
 
 const certFile = path.resolve(__dirname, `certs2/controller-node.crt.pem`);
 const keyFile = path.resolve(__dirname, `certs2/controller-node.key.pem`);
-const caCertFile = path.resolve(__dirname, `certs2/agent1-ca.crt.pem`);
-//const caCertFile = path.resolve(__dirname, `certs2/controller-ca.crt.pem`);
+const caCertFile = path.resolve(__dirname, `certs2/controller-ca.crt.pem`);
 
 const contextOptions = {
 	cert: fs.readFileSync(certFile),
 	key: fs.readFileSync(keyFile),
 	ca: fs.readFileSync(caCertFile),
-	//ecdhCurve: 'X25519'
 };
 
 const secureContext = tls.createSecureContext(contextOptions);

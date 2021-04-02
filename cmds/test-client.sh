@@ -1,0 +1,2 @@
+# ! /bin/bash
+curl -v -s -k --key ./client/certs2/controller-node.key.pem --cert ./client/certs2/controller-node.crt.pem --cacert ./client/certs2/controller-ca.crt.pem  https://localhost:7880/authenticate

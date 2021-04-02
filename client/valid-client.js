@@ -5,15 +5,15 @@ const fetch = require('node-fetch');
 
 const serverUrl = 'https://localhost:7880/authenticate';
 
-const certFile = path.resolve(__dirname, `certs/controller.crt.pem`);
-const keyFile = path.resolve(__dirname, `certs/controller.key.pem`);
-const caCertFile = path.resolve(__dirname, `certs/node.ca.cert.pem`);
+const certFile = path.resolve(__dirname, `certs2/controller-node.crt.pem`);
+const keyFile = path.resolve(__dirname, `certs2/controller-node.key.pem`);
+const caCertFile = path.resolve(__dirname, `certs2/controller-ca.crt.pem`);
 
 const agent = new https.Agent({
 	cert: fs.readFileSync(certFile),
 	key: fs.readFileSync(keyFile),
 	ca: fs.readFileSync(caCertFile),
-	rejectUnauthorized: true,
+	rejectUnauthorized: false,
 	checkServerIdentity: (
 		host,
 		cert,
@@ -26,10 +26,5 @@ const agent = new https.Agent({
 let opts = { agent: agent };
 
 fetch(serverUrl, opts)
-	.then((res) => {
-		console.log('Data:' + res.data);
-	})
-	.catch((err) => {
-		console.error(err.response.data);
-	});
-
+	.then(res => res.text())
+    .then(json => console.log(json));
